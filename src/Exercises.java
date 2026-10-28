@@ -96,7 +96,16 @@ public class Exercises {
      * @param head the head of the list
      */
     public static void makePositive(ListNode head) {
+        ListNode current = head;
 
+        // if current node is a negative, make it a positive
+        while (current != null) {
+            if (current.data < 0) {
+                current.data = -current.data; // neg + neg = pos
+            }
+
+            current = current.next;
+        }
     }
 
     /**
