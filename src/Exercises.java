@@ -125,6 +125,18 @@ public class Exercises {
      * @return whether the list is increasing
      */
     public static boolean isIncreasing(ListNode head) {
-        return false;
+        ListNode current = head;
+
+        while (current != null && current.next != null) {
+            // if current node is greater than next, return false
+            if (current.data > current.next.data) {
+                return false;
+            }
+
+            current = current.next;
+        }
+
+        // if current data looped successfully, return true
+        return true;
     }
 }
